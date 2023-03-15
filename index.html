@@ -88,6 +88,11 @@
             alert(message);
         });
     };
+
+    var linkElement = document.createElement('a');
+    linkElement.id = 'link';
+    window.document.body.appendChild(linkElement);        
+    
     document.body.appendChild(script);
 
     function initBridge() {
@@ -242,6 +247,12 @@
         }
         
       }
+
+    function OpenUrl(url) {
+        var link = document.getElementById('link');
+        link.setAttribute('href', url);
+        link.click();
+    }
 
     function CustomSend(nameMethod, paramsJson){
         var obj = {};
